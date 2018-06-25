@@ -16,7 +16,6 @@ class Home extends Component {
   }
 
   render() {
-    const userRoles = ['Seeker', 'Finder'];
     return (
       <div>
         <div>
