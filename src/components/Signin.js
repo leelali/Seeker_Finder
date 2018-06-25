@@ -1,9 +1,43 @@
 import React, { Component } from 'react';
 
 class Signin extends Component {
+  constructor() {
+    super();
+    this.state = {
+      username: '',
+      password: '',
+      error: null,
+    }
+  }
+
+  handleInputChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+  }
+
+  handleSignIn = e => {
+    e.preventDefault();
+ 
+    if (this.state.username==='' || this.state.password==='') {
+      alert('Please enter username and password');
+      return;
+    }
+    
+    alert('Successfully sign in');
+  }
+
   render() {
     return (
-      <div>Please sign in</div>
+      <div className='component'>
+        <div className='title'>Sign In</div>
+        <form onSubmit={this.handleSignIn}>
+          <div><input type="text" className='form--item' name='username' value={this.state.username} onChange={this.handleInputChange} placeholder="Email Address" required/></div>
+          <div><input type="password" className='form--item' name='password' value={this.state.password} onChange={this.handleInputChange} placeholder="Password" required/></div> 
+          <button className='button' onClick={this.handleSignIn}>Sign In</button> 
+        </form>
+        {this.state.error}
+      </div>
     );
   }
 }
