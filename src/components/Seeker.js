@@ -9,6 +9,7 @@ class Seeker extends Component {
       description: '',
       address: '',
       zipCode: '',
+      missingDate: '',
     };
   }
 
@@ -49,6 +50,10 @@ class Seeker extends Component {
           <div>
             Zipcode:
             <input type='number' name='zipCode' value={this.state.zipCode} onChange={this.handleInputChange} placeholder='Enter Zip Code'></input>
+          </div>
+          <div>
+            Missing Date:
+            <input type='date' name='missingDate' value={this.state.missingDate} onChange={this.handleInputChange} placeholder='Enter Missing Date'></input>
           </div>
           <button>Submit</button>
       </div>
