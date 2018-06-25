@@ -5,7 +5,7 @@ class Seeker extends Component {
     super();
     this.state = {
       itemType: '',
-      image: null,
+      uploadFileURL: '',
       description: '',
       address: '',
       zipCode: '',
@@ -33,6 +33,10 @@ class Seeker extends Component {
               <option value='Toys'>Toys</option>
               <option value='Others'>Others</option>
           </select>
+          <div>
+            Please Choose Images or Videos for missing item:
+            <input type='file' name='uploadFileURL' value={this.state.uploadFileURL} onChange={this.handleInputChange} placeholder='Enter Image/Video'></input>
+          </div>
           <div>
             Please Add Description for the missing item:
             <input type='text' name='description' value={this.state.description} onChange={this.handleInputChange} placeholder='Enter Description for Missing Item'></input>
