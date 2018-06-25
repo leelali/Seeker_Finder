@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Finder extends Component {
   render() {
     return (
-      <div>Welcome</div>
+      <div>I am finder</div>
     );
   }
 }

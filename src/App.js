@@ -14,17 +14,20 @@ import Account from './components/Account';
 import './App.css';
 
 class App extends Component {
+
   render() {
     return (
       <BrowserRouter>
-        <Navigation />
-        <Route path='/' exact comopnent={Home} />
-        <Route path='/signup' comopnent={Signup} />                 
-        <Route path='/signin' comopnent={Signin} />
-        <Route path='/signout' comopnent={Signout} />
-        <Route path='/seeker' comopnent={Seeker} />
-        <Route path='/finder' comopnent={Finder} />
-        <Route path='/account' comopnent={Account} />
+        <div>
+          <Navigation />
+          <Route path='/' exact component={Home} />
+          <Route path='/signup' component={Signup} />                 
+          <Route path='/signin' component={Signin} />
+          <Route path='/signout' component={Signout} />
+          <Route path='/seeker' component={Seeker} />
+          <Route path='/finder' component={Finder} />
+          <Route path='/account' component={Account} /> 
+        </div>
       </BrowserRouter>
     );
   }
