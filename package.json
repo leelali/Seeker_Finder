@@ -1,0 +1,28 @@
+{
+  "name": "seeker_finder",
+  "version": "1.0.0",
+  "description": "Backend for App Seeker_Finder",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leelali/Seeker_Finder.git"
+  },
+  "author": "Xiaoping Li",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leelali/Seeker_Finder/issues"
+  },
+  "homepage": "https://github.com/leelali/Seeker_Finder#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "knex": "^0.14.6",
+    "mysql": "^2.15.0",
+    "nodemon": "^1.17.5",
+    "sqlite3": "^4.0.1"
+  }
+}
