@@ -21,10 +21,11 @@ class Seeker extends Component {
 
   render() {
     return (
-      <div>
-        Which type the missing item belongs to:
+      <form>
         {/* creates a dropdown menu of missing items' types to choose from */}
-        <select className='dropdownList' name='itemType' onChange={this.handleInputChange}>
+        <div>
+          <label>Which type does the missing item belong to:</label>
+          <select className='dropdownList' name='itemType' onChange={this.handleInputChange}>
               <option value='' selected disabled>Select A Item Type</option>
               <option value='Human Being'>Human Being</option>
               <option value='Pets'>Pets</option>
@@ -34,29 +35,37 @@ class Seeker extends Component {
               <option value='Toys'>Toys</option>
               <option value='Others'>Others</option>
           </select>
-          <div>
-            Please Choose Images or Videos for missing item:
-            <input type='file' name='uploadFileURL' value={this.state.uploadFileURL} onChange={this.handleInputChange} placeholder='Enter Image/Video'></input>
-          </div>
-          <div>
-            Please Add Description for the missing item:
-            <input type='text' name='description' value={this.state.description} onChange={this.handleInputChange} placeholder='Enter Description for Missing Item'></input>
-          </div>
-          <div>Where did you last time see the missing item?</div>
-          <div>
-            Address:
-            <input type='text' name='address' value={this.state.address} onChange={this.handleInputChange} placeholder='Enter the Address'></input>
-          </div>
-          <div>
-            Zipcode:
-            <input type='number' name='zipCode' value={this.state.zipCode} onChange={this.handleInputChange} placeholder='Enter Zip Code'></input>
-          </div>
-          <div>
-            Missing Date:
-            <input type='date' name='missingDate' value={this.state.missingDate} onChange={this.handleInputChange} placeholder='Enter Missing Date'></input>
-          </div>
-          <button>Submit</button>
-      </div>
+        </div>
+        
+        <div>
+          <label>Please Choose Images or Videos for missing item:</label>
+          <input type='file' name='uploadFileURL' value={this.state.uploadFileURL} onChange={this.handleInputChange} placeholder='Enter Image/Video'></input>
+        </div>
+
+        <div>
+          <label>Please Add Description for the missing item:</label>
+          <input type='text' name='description' value={this.state.description} onChange={this.handleInputChange} placeholder='Enter Description for Missing Item'></input>
+        </div>
+
+        <div>Where did you last time see the missing item?</div>
+
+        <div>
+          <label>Address:</label>
+          <input type='text' name='address' value={this.state.address} onChange={this.handleInputChange} placeholder='Enter the Address'></input>
+        </div>
+
+        <div>
+          <label>Zipcode:</label>
+          <input type='number' name='zipCode' value={this.state.zipCode} onChange={this.handleInputChange} placeholder='Enter Zip Code'></input>
+        </div>
+
+        <div>
+          <label>Missing Date:</label>
+          <input type='date' name='missingDate' value={this.state.missingDate} onChange={this.handleInputChange} placeholder='Enter Missing Date'></input>
+        </div>
+        
+        <button>Submit</button>
+      </form>
     );
   }
 }
