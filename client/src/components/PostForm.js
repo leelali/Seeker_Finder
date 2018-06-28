@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PostTypesDropdownList from './PostTypesDropdownList';
+import TargetTypesDropdownList from './TargetTypesDropdownList';
 
 class PostForm extends Component {
   constructor() {
@@ -15,36 +17,17 @@ class PostForm extends Component {
   handleInputChange = (e)=> {
     this.setState({
       [e.target.name]: e.target.value
-    })
+    });
   };
 
   render() {
     return (
       <form>
-        {/* creates a dropdown menu of Post Types to choose from */}
-        <div>
-          <label>Which type does the Post belong to:</label>
-          <select className='dropdownList' name='postType' onChange={this.handleInputChange}>
-              <option value='' selected disabled>Select A Post Type</option>
-              <option value='Seeker'>Seeker</option>
-              <option value='Finder'>Finder</option>
-          </select>
-        </div>
-
-        {/* creates a dropdown menu of missing items' types to choose from */}
-        <div>
-          <label>Which type does the Target belong to:</label>
-          <select className='dropdownList' name='targetType' onChange={this.handleInputChange}>
-              <option value='' selected disabled>Select A Item Type</option>
-              <option value='Human Being'>Human Being</option>
-              <option value='Pets'>Pets</option>
-              <option value='Cards'>Cards</option>
-              <option value='Clothes'>Clothes</option>
-              <option value='Keys Wallet'>Keys Wallet</option>
-              <option value='Toys'>Toys</option>
-              <option value='Others'>Others</option>
-          </select>
-        </div>
+        {/* Dropdown List for Post type */}
+        <PostTypesDropdownList handleChange={this.handleInputChange}/>
+        
+        {/* Dropdown List for Target type */}
+        <TargetTypesDropdownList handleChange={this.handleInputChange}/>
         
         {/* <div>
           <label>Please Choose Images or Videos for missing item:</label>
