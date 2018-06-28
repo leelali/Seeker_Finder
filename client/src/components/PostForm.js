@@ -1,19 +1,14 @@
 import React, { Component } from 'react';
-// import PlacesAutocomplete, {
-//   geocodeByAddress,
-//   getLatLng,
-// } from 'react-places-autocomplete';
 
-class Seeker extends Component {
+class PostForm extends Component {
   constructor() {
     super();
     this.state = {
-      itemType: '',
-      uploadFileURL: '',
+      postType: '',
+      targetType: '',
       description: '',
-      address: '',
       zipCode: '',
-      missingDate: '',
+      userID: '',
     };
   }
 
@@ -74,4 +69,4 @@ class Seeker extends Component {
   }
 }
 
-export default Seeker;
+export default PostForm;

@@ -6,9 +6,7 @@ import Home from './components/Home';
 import Signup from './components/Signup';
 import Signin from './components/Signin';
 import Signout from './components/Signout';
-import Seeker from './components/Seeker';
-import Finder from './components/Finder';
-import Account from './components/Account';
+import DashBoard from './components/DashBoard';
 
 
 import './App.css';
@@ -24,9 +22,7 @@ class App extends Component {
           <Route path='/signup' component={Signup} />                 
           <Route path='/signin' component={Signin} />
           <Route path='/signout' component={Signout} />
-          <Route path='/seeker' component={Seeker} />
-          <Route path='/finder' component={Finder} />
-          <Route path='/account' component={Account} /> 
+          <Route path='/dashboard' component={DashBoard} />
         </div>
       </BrowserRouter>
     );

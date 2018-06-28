@@ -61,7 +61,7 @@ createPostsTable = knex => {
         table.integer('postType').notNullable();
         table.integer('targetType');
         table.text('description', 'longtext');
-        table.integer('zipcode');
+        table.string('zipcode', 128);
         table
           .integer('userID')
           .references('id')

@@ -4,8 +4,8 @@ class Home extends Component {
   constructor() {
     super();
     this.state = {
-      userRole: '',
-      zipCode: null,
+      postType: '',
+      zipCode: '',
     };
   }
 
@@ -20,21 +20,18 @@ class Home extends Component {
       <div>
         <div>
           {/* creates a dropdown menu of Seeker/Finder to choose from */}
-          <select className='dropdownList' name='userRole' onChange={this.handleInputChange}>
-              <option value='' selected disabled>Select A User Role</option>
+          <select className='dropdownList' name='postType' onChange={this.handleInputChange}>
+              <option value='' selected disabled>Select A Post Type</option>
               <option value='Seeker'>Seeker</option>
               <option value='Finder'>Finder</option>
           </select>
         </div>
         <div>
-          <input type='number' name='zipCode' value={this.state.zipCode} onChange={this.handleInputChange} placeholder='Enter Zip Code'></input>
+          <input type='text' name='zipCode' value={this.state.zipCode} onChange={this.handleInputChange} placeholder='Enter Zip Code'></input>
         </div>
         <div>
           <button>Start</button>
-        </div>
-        
-        
-        
+        </div>  
       </div>
     );
   }
