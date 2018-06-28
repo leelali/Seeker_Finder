@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PostTypesDropdownList from './PostTypesDropdownList';
 
 class Home extends Component {
   constructor() {
@@ -17,22 +18,18 @@ class Home extends Component {
 
   render() {
     return (
-      <div>
-        <div>
-          {/* creates a dropdown menu of Seeker/Finder to choose from */}
-          <select className='dropdownList' name='postType' onChange={this.handleInputChange}>
-              <option value='' selected disabled>Select A Post Type</option>
-              <option value='Seeker'>Seeker</option>
-              <option value='Finder'>Finder</option>
-          </select>
-        </div>
+      <form>
+        {/* Dropdown List for Post type */}
+        <PostTypesDropdownList handleChange={this.handleInputChange}/>
+
         <div>
           <input type='text' name='zipCode' value={this.state.zipCode} onChange={this.handleInputChange} placeholder='Enter Zip Code'></input>
         </div>
+        
         <div>
           <button>Start</button>
         </div>  
-      </div>
+      </form>
     );
   }
 }
