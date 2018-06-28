@@ -6,7 +6,7 @@ class DashBoard extends Component {
   render() {
     return (
       <div>
-        <div>Welcome to DashBoard</div>
+        <div></div>
         <PostForm />
       </div>
       
