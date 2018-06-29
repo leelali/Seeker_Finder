@@ -2,27 +2,27 @@ const db = require('../database/dbConfiguration');
 
 module.exports = {
   get: id => {
-    let query = db('postTypes');
+    let query = db('targetTypes');
     if (id) {
       query.where('id', id).first();
     }
     return query;
   },
 
-  insert: postType => {
-    return db('postTypes')
-      .insert(postType)
+  insert: targetType => {
+    return db('targetTypes')
+      .insert(targetType)
       .then(ids => ({ id: ids[0] }));
   },
 
-  update: (id, postType) => {
-    return db('postTypes')
+  update: (id, targetType) => {
+    return db('targetTypes')
       .where('id', id)
-      .update(postType);
+      .update(targetType);
   },
 
   remove: id => {
-    return db('postTypes')
+    return db('targetTypes')
       .where('id', id)
       .del();
   },

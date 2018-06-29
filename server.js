@@ -5,6 +5,7 @@ const cors = require('cors');
 const PORT = process.env.PORT || 5000;
 const usersEndpoints = require('./users/usersEndpoints');
 const postTypesEndpoints = require('./postTypes/postTypesEndpoints');
+const targetTypesEndpoints = require('./targetTypes/targetTypesEndpoints');
 
 const server = express();
 
@@ -13,6 +14,7 @@ server.use(cors());
 
 server.use('/api/users', usersEndpoints);
 server.use('/api/postTypes', postTypesEndpoints);
+server.use('/api/targetTypes', targetTypesEndpoints);
 
 
 
