@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+
+const ROOT_URL = 'http://localhost:5000/api'; 
 
 class Signup extends Component {
   constructor() {
@@ -17,7 +20,7 @@ class Signup extends Component {
     })
   };
 
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     e.preventDefault();
     
     if (this.state.username===''||this.state.email===''||this.state.password===''||this.state.confirmPW==='') {
@@ -28,7 +31,14 @@ class Signup extends Component {
     if (this.state.password !== this.state.confirmPW) {
       alert('Password and confirmed Password do not match!!! Please enter one more time.');
     } else {
-      alert('Sign up successfully');
+      axios.post(ROOT_URL + '/users/signup', {username: this.state.username, email: this.state.email, password: this.state.password })
+        .then((result) => {
+          console.log('Sign Up successfully!');
+        })
+        .catch((error) => {
+          alert('Failed to sign you up!');
+          console.log(error);
+        });
     }
 
     this.setState({
