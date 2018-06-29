@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+
+const ROOT_URL = 'http://localhost:5000/api'; 
 
 class Signin extends Component {
   constructor() {
     super();
+
     this.state = {
       username: '',
       password: '',
@@ -24,7 +28,24 @@ class Signin extends Component {
       return;
     }
     
-    alert('Successfully sign in');
+    const data = {
+      username: this.state.username, 
+      password: this.state.password
+    };
+    
+    axios.post(ROOT_URL + '/users/signin', data)
+      .then((result) => {
+        if (result.data.username) {
+          console.log('Sign In successfully!');
+        } else {
+          this.setState({ error: "Error happens when try to sign you in! Please check email and password!"});
+          return;
+       }  
+      })
+      .catch((error) => {
+        alert('Failed to sign you in!');
+        console.log(error);
+      });
   }
 
   render() {
