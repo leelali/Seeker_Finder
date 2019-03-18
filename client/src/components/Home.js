@@ -1,35 +1,26 @@
 import React, { Component } from 'react';
-import PostTypesDropdownList from './PostTypesDropdownList';
 
 class Home extends Component {
   constructor() {
     super();
     this.state = {
       postType: '',
-      zipCode: '',
     };
   }
 
-  handleInputChange = (e) => {
+  handleBtnClick = (e) => {
     this.setState({
-      [e.target.name]: e.target.value
+      postType: e.target.value
     });
   }
 
   render() {
     return (
-      <form>
-        {/* Dropdown List for Post type */}
-        <PostTypesDropdownList handleChange={this.handleInputChange}/>
-
-        <div>
-          <input type='text' name='zipCode' value={this.state.zipCode} onChange={this.handleInputChange} placeholder='Enter Zip Code'></input>
-        </div>
-        
-        <div>
-          <button>Start</button>
-        </div>  
-      </form>
+      <div>
+        <button value="Seeker" onClick={this.handleBtnClick}>Seeker</button>
+        <button value="Finder" onClick={this.handleBtnClick}>Finder</button>
+        {this.state.postType}
+      </div>
     );
   }
 }
