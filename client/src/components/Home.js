@@ -39,7 +39,7 @@ class Home extends Component {
 
           {/* description: more words about this item */}
           <label htmlFor="description">Description</label>
-          <input type="text" name="description" id="description" />
+          <textarea id="description" rows="4" cols="5"></textarea>
 
           {/* location: share location or type in with zip code */}
           <label htmlFor="location">Location</label>
