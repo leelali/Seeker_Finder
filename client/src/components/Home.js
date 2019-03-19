@@ -5,7 +5,8 @@ class Home extends Component {
     super();
     this.state = {
       postType: '',
-      images: [],
+      image: false,
+      url: '',
     };
   }
 
@@ -16,9 +17,9 @@ class Home extends Component {
   }
 
   handleImagesUpload = event => {
-    const image = event.target.files[0];
-    const updatedImages = this.state.images.concat(image);
-    this.setState({ images: updatedImages});
+    if (event.target.files[0]) {
+      this.setState({ image: true, url: event.target.files[0].name });
+    }  
   }
 
   render() {
@@ -48,6 +49,7 @@ class Home extends Component {
           {/* button: submit to database */}
           <input type="submit" value="Upload Info"></input>
         </form>
+
         {/* <img src={this.state.images[0].name} alt="photos of kitten" /> */}
       </div>
       
